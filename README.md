@@ -32,6 +32,13 @@ python train.py --wsi_train_feat_dir ./training_emds \
  --seed 2025
 ```
 
+```
+python predict.py --model_weight './results/model_epoch_30.pth' \
+ --wsi_feat_dir './validation_emds' \
+ --label_path './labels' \
+ --emd_path './fused_emds'
+```
+
 ## Acknowledgement
 
 ## Citation
