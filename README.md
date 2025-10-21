@@ -8,12 +8,12 @@ Pathological FMs have exhibited substantial heterogeneity caused by diverse priv
 Ubuntu 20.04, CUDA version 12.0. <br>
 
 ## Major packages
-python==3.10
-torch==2.6.0
-torchvision==0.21.0
-huggingface-hub==0.30.2
-openslide-python==1.4.2
-trident
+python==3.10 <br>
+torch==2.6.0 <br>
+torchvision==0.21.0 <br>
+huggingface-hub==0.30.2 <br>
+openslide-python==1.4.2 <br>
+trident <br>
 mvlearn
 
 ## Usage
