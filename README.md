@@ -18,13 +18,13 @@ mvlearn
 
 ## Usage
 ```
-python train.py --wsi_train_feat_dir "path or list to training embeddings" \
- --model_output_path "path to saving the checkpoints" \
- --wsi_valid_feat_dir "path or list to validation embeddings" \
- --label_path "path or list to labels" \
- --teacher_emds_path_1 "path to slide FM 1 with its embeddings" \
- --teacher_emds_path_2 "path to slide FM 2 with its embeddings" \
- --teacher_emds_path_3 "path to slide FM 2 with its embeddings" \
+python train.py --wsi_train_feat_dir ./training_emds \
+ --model_output_path "./results" \
+ --wsi_valid_feat_dir "./validation_emds" \
+ --label_path "./labels" \
+ --teacher_emds_path_1 "./teacher_1_emds" \
+ --teacher_emds_path_2 "./teacher_2_emds" \
+ --teacher_emds_path_3 "./teacher_3_emds" \
  --num_classes 2 \
  --epochs 60 \
  --batch-size 64 \
