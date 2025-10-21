@@ -1,5 +1,5 @@
 # FuseCPath
-Official implementation of the paper: Fusion of Heterogeneous Pathology Foundation Models for Whole Slide Image Analysis.
+Official implementation of the paper: Fusion of Heterogeneous Pathology Foundation Models for Whole Slide Image Analysis. Code will be released upon paper accepatance.
 
 ## Introduction
 <img align="right" src="assets/FuseCPath_logo.png" width="250px" />
