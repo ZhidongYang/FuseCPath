@@ -8,6 +8,9 @@ Pathological FMs have exhibited substantial heterogeneity caused by diverse priv
 ## System requirement
 Ubuntu 20.04, CUDA version 12.0. <br>
 
+## Dataset
+Whole slide image (WSI) and gene expression dataset: The WSIs and paired gene expression data used in this work are from TCGA (https://portal.gdc.cancer.gov/), open access to all.
+
 ## Major packages
 ```
 python==3.10
