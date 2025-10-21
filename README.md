@@ -17,6 +17,20 @@ trident <br>
 mvlearn
 
 ## Usage
+'''
+python train.py --wsi_train_feat_dir "path or list to training embeddings" \
+ --model_output_path "path to saving the checkpoints" \
+ --wsi_valid_feat_dir "path or list to validation embeddings" \
+ --label_path "path or list to labels" \
+ --teacher_emds_path_1 "path to slide FM 1 with its embeddings" \
+ --teacher_emds_path_2 "path to slide FM 2 with its embeddings" \
+ --teacher_emds_path_3 "path to slide FM 2 with its embeddings" \
+ --num_classes 2 \
+ --epochs 60 \
+ --batch-size 64 \
+ --lr 0.0001 \
+ --seed 2025
+'''
 
 ## Acknowledgement
 
