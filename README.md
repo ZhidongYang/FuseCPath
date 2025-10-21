@@ -21,13 +21,13 @@ mvlearn
 
 ## Usage
 ```
-python train.py --wsi_train_feat_dir ./training_emds \
- --model_output_path "./results" \
- --wsi_valid_feat_dir "./validation_emds" \
- --label_path "./labels" \
- --teacher_emds_path_1 "./teacher_1_emds" \
- --teacher_emds_path_2 "./teacher_2_emds" \
- --teacher_emds_path_3 "./teacher_3_emds" \
+python train.py --wsi_train_feat_dir './training_emds' \
+ --model_output_path './results' \
+ --wsi_valid_feat_dir './validation_emds' \
+ --label_path './labels' \
+ --teacher_emds_path_1 './teacher_1_emds' \
+ --teacher_emds_path_2 './teacher_2_emds' \
+ --teacher_emds_path_3 './teacher_3_emds' \
  --num_classes 2 \
  --epochs 60 \
  --batch-size 64 \
