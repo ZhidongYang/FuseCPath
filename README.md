@@ -17,7 +17,7 @@ trident <br>
 mvlearn
 
 ## Usage
-'''
+```
 python train.py --wsi_train_feat_dir "path or list to training embeddings" \
  --model_output_path "path to saving the checkpoints" \
  --wsi_valid_feat_dir "path or list to validation embeddings" \
@@ -30,7 +30,7 @@ python train.py --wsi_train_feat_dir "path or list to training embeddings" \
  --batch-size 64 \
  --lr 0.0001 \
  --seed 2025
-'''
+```
 
 ## Acknowledgement
 
