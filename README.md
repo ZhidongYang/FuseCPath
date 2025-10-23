@@ -2,7 +2,7 @@
 Official implementation of the paper: Fusion of Heterogeneous Pathology Foundation Models for Whole Slide Image Analysis. <b>Complete code will be released upon paper accepatance.</b>
 
 ## Introduction
-<img align="right" src="assets/FuseCPath_logo.png" width="250px" />
+<img align="right" src="assets/FuseCPath_logo_v2.png" width="250px" />
 Pathological FMs have exhibited substantial heterogeneity caused by diverse private training datasets and different network architectures. This heterogeneity introduces performance variability when we utilize the extracted features from different FMs in the downstream tasks. To fully explore the advantage of multiple FMs effectively, in this work, we propose a novel framework for the fusion of heterogeneous pathological FMs, called FuseCPath, yielding a model with a superior ensemble performance by introducing patch-level local features re-embedding and slide-level collaborative distillation. Extensive experiments conducted on cancer datasets from The Cancer Genome Atlas (TCGA) have demonstrated that the proposed FuseCPath achieves state-of-the-art performance across multiple tasks on these public datasets.
 
 ## System requirement
