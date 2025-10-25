@@ -68,10 +68,9 @@ class InnerAttention(nn.Module):
             head_dim = dim // num_heads
         self.head_dim = head_dim
         self.scale = qk_scale or head_dim ** -0.5
-
-        # zhidong yang sparse topk 20241207 CODE FRAGMENT START
+        
+        # sparse topk features
         self.sparse_topk = 16
-        # zhidong yang sparse topk 20241207 CODE FRAGMENT END
 
         self.qkv = nn.Linear(dim, head_dim * num_heads * 3, bias=qkv_bias)
         self.attn_drop = nn.Dropout(attn_drop)
@@ -116,7 +115,7 @@ class InnerAttention(nn.Module):
             pe = self.pe(attn)
             attn = attn+pe
 
-        # zhidong yang sparse self-attention 20241207 CODE FRAGMENT START
+        # sparse self-attention START
         mask_value = max_neg_value(attn)
         if exists(self.sparse_topk) and self.sparse_topk < attn.shape[-1]:
             attn_tmp = attn.detach().cpu()
@@ -126,7 +125,7 @@ class InnerAttention(nn.Module):
             mask = attn < vk
             attn.masked_fill_(mask, mask_value)
             del mask
-        # zhidong yang sparse self-attention 20241207 CODE FRAGMENT END
+        # sparse self-attention END
         
         attn = self.softmax(attn)
 
@@ -135,18 +134,12 @@ class InnerAttention(nn.Module):
         if self.pe is not None and self.epeg_type == 'value_bf':
             # B,H,N,C -> B,HC,N-0.5,N-0.5 
             pe = self.pe(v.permute(0,3,1,2).reshape(B_,C,int(np.ceil(np.sqrt(N))),int(np.ceil(np.sqrt(N)))))
-            #pe = torch.einsum('ahbd->abhd',pe).flatten(-2,-1)
             v = v + pe.reshape(B_,self.num_heads, self.head_dim,N).permute(0,1,3,2)
-
-        # print(v.size())
 
         x = (attn @ v).transpose(1, 2).reshape(B_, N, self.num_heads*self.head_dim)
         
         if self.pe is not None and self.epeg_type == 'value_af':
-            #print(v.size())
             pe = self.pe(v.permute(0,3,1,2).reshape(B_,C,int(np.ceil(np.sqrt(N))),int(np.ceil(np.sqrt(N)))))
-            # print(pe.size())
-            # print(v.size())
             x = x + pe.reshape(B_,self.num_heads*self.head_dim,N).transpose(-1,-2)
 
         x = self.proj(x)
