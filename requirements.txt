@@ -19,7 +19,7 @@ exceptiongroup==1.2.2
 executing==2.2.0
 fairscale==0.4.13
 filelock==3.18.0
-flash-attn @ file:///data3/ruiyan/yzd/trident/flash_attn-2.5.8%2Bcu122torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl#sha256=13454dd3d37cf173649bd389b84614b8072fb283f8f2fd23a65ab66caafc304b
+flash-attn==2.5.8
 fonttools==4.57.0
 formulaic==1.1.1
 fsspec==2025.3.2
