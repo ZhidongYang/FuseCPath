@@ -22,7 +22,7 @@ def main(args):
 
     tb_writer = SummaryWriter()
 
-    # 实例化训练数据集
+    # instantiate training data 
     train_dataset = WSI_Dataset(result_txt_path=args.wsi_train_feat_dir,
                                 label_path=args.label_path,
                                 teacher_emds_path_1=args.teacher_emds_path_1,
@@ -30,7 +30,7 @@ def main(args):
                                 teacher_emds_path_3=args.teacher_emds_path_3,
                               mode='train')
     # exit(0)
-    # 实例化验证数据集
+    # instantiate validation data 
     val_dataset = WSI_Dataset(result_txt_path=args.wsi_valid_feat_dir,
                                 label_path=args.label_path,
                                 teacher_emds_path_1=args.teacher_emds_path_1,
@@ -113,7 +113,7 @@ if __name__ == '__main__':
     parser.add_argument('--temperature', type=float, default=3.0)
     parser.add_argument('--seed', default=0, type=int, help='Random seed.')
 
-    # 数据集所在根目录
+    # directories
     # https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz
     # parser.add_argument('--data-path', type=str,
     #                     default="/hdd_data/yangzd/flower_photos")
@@ -133,10 +133,10 @@ if __name__ == '__main__':
                         default='/data3/ruiyan/yzd/trident/trident_features/20x_224px_0px_overlap/slide_features_prism')
     parser.add_argument('--model-name', default='', help='create model name')
 
-    # 预训练权重路径，如果不想载入就设置为空字符
+    # whether use pre-trained weights
     parser.add_argument('--weights', type=str, default='', help='initial weights path')
 
-    # 是否冻结权重
+    # freeze layers
     parser.add_argument('--freeze-layers', type=bool, default=True)
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')
 
