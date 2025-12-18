@@ -20,29 +20,17 @@ from tqdm import tqdm
 
 
 parser = argparse.ArgumentParser(description='K-means for json file')
-# parser.add_argument('--giga_feat_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/gigapath_features', metavar='WSI_PATH', type=str,
-#                     help='Path to the input WSI file')
-# parser.add_argument('--uni_feat_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/uni_features', metavar='WSI_PATH', type=str,
-#                     help='Path to the input WSI file')
-# parser.add_argument('--conch_feat_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/conch_features', metavar='WSI_PATH', type=str,
-#                     help='Path to the input WSI file')
-# parser.add_argument('--position_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/conch_features', metavar='WSI_PATH', type=str,
-#                     help='Path to the input WSI file')
-# parser.add_argument('--save_txt_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/conch_features', metavar='TXT_PATH', type=str,
-#                     help='Path to the input WSI file')
-# parser.add_argument('--txt_path', default='/hdd_data/yangzd/vision_transformer/orthogonal_features_training/train_direct_concat', metavar='TXT_PATH', type=str,
-#                     help='Path to the input WSI file')
-parser.add_argument('--giga_feat_path', default='/hdd_data/yangzd/TCGA_features_analysis/gigapath_features', metavar='WSI_PATH', type=str,
+parser.add_argument('--giga_feat_path', default='./TCGA_features_analysis/gigapath_features', metavar='WSI_PATH', type=str,
                     help='Path to the input WSI file')
-parser.add_argument('--uni_feat_path', default='/hdd_data/yangzd/TCGA_features_analysis/uni_features', metavar='WSI_PATH', type=str,
+parser.add_argument('--uni_feat_path', default='./TCGA_features_analysis/uni_features', metavar='WSI_PATH', type=str,
                     help='Path to the input WSI file')
-parser.add_argument('--conch_feat_path', default='/hdd_data/yangzd/TCGA_features_analysis/conch_features', metavar='WSI_PATH', type=str,
+parser.add_argument('--conch_feat_path', default='./TCGA_features_analysis/conch_features', metavar='WSI_PATH', type=str,
                     help='Path to the input WSI file')
-parser.add_argument('--position_path', default='/hdd_data/yangzd/TCGA_features_analysis/conch_features', metavar='WSI_PATH', type=str,
+parser.add_argument('--position_path', default='./TCGA_features_analysis/conch_features', metavar='WSI_PATH', type=str,
                     help='Path to the input WSI file')
-parser.add_argument('--save_txt_path', default='/hdd_data/yangzd/TCGA_features_analysis/conch_features', metavar='TXT_PATH', type=str,
+parser.add_argument('--save_txt_path', default='./TCGA_features_analysis/conch_features', metavar='TXT_PATH', type=str,
                     help='Path to the input WSI file')
-parser.add_argument('--txt_path', default='/hdd_data/yangzd/TCGA_features_analysis/multiview_kmeans_feat_clustering', metavar='TXT_PATH', type=str,
+parser.add_argument('--txt_path', default='./TCGA_features_analysis/multiview_kmeans_feat_clustering', metavar='TXT_PATH', type=str,
                     help='Path to the input WSI file')
 parser.add_argument('--class_num', default=50, metavar='CLASS_NUM', type=int, help='Clustering Number Class')
 parser.add_argument('--scale_ratio', default=512, metavar='SCALE_RATIO', type=int, help='Coordinate reduction factor')
@@ -70,8 +58,8 @@ class OrthogonalLinear(nn.Module):
 
 def main():
     args = parser.parse_args()
-    #run2(args)      #将torch的特征形式写为WSI的txt格式
-    run1(args)      #特征聚类
+    #run2(args)      # convert to txt files
+    run1(args)      # cluster
     # print(111)
 
 
@@ -211,4 +199,5 @@ def run2(args):
 
 if __name__ == '__main__':
     main()
+
 
