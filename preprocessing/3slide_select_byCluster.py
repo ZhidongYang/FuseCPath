@@ -9,15 +9,10 @@ import cv2
 import math
 
 parser = argparse.ArgumentParser(description='K-menas for json file')
-parser.add_argument('--txt_path', default='/hdd_data/yangzd/clustering_and_patch_selection/dino_feat_clustering', metavar='TXT_PATH', type=str,
+parser.add_argument('--txt_path', default='./clustering_and_patch_selection/dino_feat_clustering', metavar='TXT_PATH', type=str,
                     help='INPUT: Path to the input WSI file')
-parser.add_argument('--txt_res_path', default='/hdd_data/yangzd/clustering_and_patch_selection/res_select_txt', metavar='TXT_RES_PATH', type=str,
+parser.add_argument('--txt_res_path', default='./clustering_and_patch_selection/res_select_txt', metavar='TXT_RES_PATH', type=str,
                     help='OUTPUT: Path to the input WSI file')
-#parser.add_argument('--wsi_path', default='/home/sdc/fuzhong-linchuang/svs/wild', metavar='WSI_PATH', type=str,
-#                    help='Path to the input WSI file')
-#parser.add_argument('--img_path', default='/home/sdc/fuzhong-linchuang/midFiles/selectPng3/wild', metavar='IMG_PATH', type=str,
-#                    help='Path to the input WSI file')
-# parser.add_argument('--cls_num', default='50', metavar='CLS_NUM', type=int,help='Class Number')
 parser.add_argument('--num_per_cls', default='10', metavar='NUM_PER_CLASS', type=int,help='The count of patch for every clustering class')
 
 random = np.random.RandomState(0)
@@ -84,5 +79,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
