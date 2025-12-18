@@ -120,17 +120,17 @@ if __name__ == '__main__':
     parser.add_argument('--model_output_path', type=str,
                         default='./weights_20250608_luad_rrtmil_kd_3wsiFM_egfr')
     parser.add_argument('--wsi_train_feat_dir', type=str,
-                        default='/hdd_data/yangzd/prov-gigapath/gigapath_features_training/train_select_feat_extended')
+                        default='./prov-gigapath/gigapath_features_training/train_select_feat_extended')
     parser.add_argument('--wsi_valid_feat_dir', type=str,
-                        default='/hdd_data/yangzd/prov-gigapath/gigapath_features_training/valid_select_feat_extended')
+                        default='./prov-gigapath/gigapath_features_training/valid_select_feat_extended')
     parser.add_argument('--label_path', type=str,
-                        default='/hdd_data/yangzd/TCGA_LUAD_mutation_labels/LUAD_TP53_mutation_list.txt')
+                        default='./TCGA_LUAD_mutation_labels/LUAD_TP53_mutation_list.txt')
     parser.add_argument('--teacher_emds_path_1', type=str,
-                        default='/data3/ruiyan/yzd/trident/trident_features/20x_256px_0px_overlap_gigapath/slide_features_gigapath')
+                        default='../trident/trident_features/20x_256px_0px_overlap_gigapath/slide_features_gigapath')
     parser.add_argument('--teacher_emds_path_2', type=str,
-                        default='/data3/ruiyan/yzd/trident/trident_features/20x_512px_0px_overlap/slide_features_titan')
+                        default='../trident/trident_features/20x_512px_0px_overlap/slide_features_titan')
     parser.add_argument('--teacher_emds_path_3', type=str,
-                        default='/data3/ruiyan/yzd/trident/trident_features/20x_224px_0px_overlap/slide_features_prism')
+                        default='../trident/trident_features/20x_224px_0px_overlap/slide_features_prism')
     parser.add_argument('--model-name', default='', help='create model name')
 
     # whether use pre-trained weights
