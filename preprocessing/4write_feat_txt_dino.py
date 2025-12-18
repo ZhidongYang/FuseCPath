@@ -8,11 +8,11 @@ from multiprocessing import Process,Manager,Value,Pool
 
 
 parser = argparse.ArgumentParser(description='record selected features for every wsi')
-parser.add_argument('--feature_txt_path', type=str, default='/data/yuhaowang/code_from_ruiyan/clustering_and_patch_selection/dino_features',
+parser.add_argument('--feature_txt_path', type=str, default='./clustering_and_patch_selection/dino_features',
                     help='path to feature txt')
-parser.add_argument('--result_txt_path', type=str, default='/data/yuhaowang/code_from_ruiyan/clustering_and_patch_selection/res_select_txt',
+parser.add_argument('--result_txt_path', type=str, default='./clustering_and_patch_selection/res_select_txt',
                     help='path to result txt')
-parser.add_argument('--write_txt_dir', type=str, default='/data/yuhaowang/code_from_ruiyan/clustering_and_patch_selection/luad_whole_slide_select_feat_txt_dino',
+parser.add_argument('--write_txt_dir', type=str, default='./clustering_and_patch_selection/luad_whole_slide_select_feat_txt_dino',
                     help='path to result txt')
 parser.add_argument('--process_count', type=int, default=10, help='the count of multiprocess')
 
@@ -71,3 +71,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
